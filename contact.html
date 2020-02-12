@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="..\fitnesstrainer\assets\js\FormValidation.js"></script>
+  <link rel="stylesheet" type="text/css" href="..\fitnesstrainer\assets\css\placeappointment.css">
+ <title>Contact us</title>
+</head>
+<body>
+ <div class="container-fluid">
+    <div class="row">
+      <nav class="container-fluid navbar navbar-expand-md navbar-light bg-light sticky-top  ">
+          <img src="..\fitnesstrainer\assets\images\logo1.png" alt="logo" height="95" width="95" class="rounded-circle">
+          <h1><b>Personal Fitness Trainer</b></h1>
+        </nav>
+      </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <nav class=" container-fluid navbar navbar-expand-md bg-secondary navbar-dark">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item text-white">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="placeappointment.html">Appointment</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="viewappointment.html">View Appointment</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact us</a>
+              </li>
+          </ul>
+        </nav>
+      </div>  
+  </div>
+<div class="row">
+  <div class="sidebar">
+      <a href="index.html">Home</a>
+      <a href="placeappointment.html">Appointment</a>
+      <a href="viewappointment.html">View Appointment</a>
+      <a class="active" href="contact.html">Contact us</a>
+  </div>
+  <div class="row">
+      <form  class="appointmentform">
+        <div class="row">
+          <div class="col">
+            <h1>Contact Us</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label class="headings">Name</label>
+            <input type="text" name="fname" class="form-control" id="firstname" placeholder ="Please enter your name" required="required" data-error="name is required.">
+          </div>
+          <div class="col">
+            <label class="headings">Email</label>
+            <input type="Email" name="email" class="form-control" id="email" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label class="headings">Phone</label>
+            <input type="text" name="phonenumber" class="form-control" id="phoneNo"  placeholder="Please enter your mobile No*" required="required" data-error="Mobile No is required.">
+          </div>
+        </div><br>
+        <div class="row">
+          <div class="col text-center">
+            <button class="btn btn-primary" type="submit">Submit</button>
+          </div>
+        </div>  
+      </form> 
+  </div>
+</div> 
+</body>
+</html>
