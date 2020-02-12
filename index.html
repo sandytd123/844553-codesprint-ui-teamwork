@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  	<style>
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+.sidebar a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+.block {
+  display: block;
+  width: 100%;
+  border: none;
+  background-color:grey;
+  color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 22px;
+}
+.block:hover {
+  background-color: olive;
+  color: white;
+}
+.box{
+display:block;
+width: 100%;
+border:none;
+background-color:grey;
+color:white;
+padding: 14px 28px;
+border-radius: 22px;
+}
+</style>  
+<title>fitness trainer</title>
+</head>
+<body>
+	<nav class=" container-fluid navbar navbar-expand-md navbar-light bg-light sticky-top  ">
+ <img src="..\fitnesstrainer\assets\images\logo1.png" alt="logo" height="95" width="95" class="rounded-circle">
+<h1><b>Personal Fitness Trainer</b></h1>
+<div>
+</div>
+	</nav>
+ <nav class="navbar navbar-expand-md bg-secondary navbar-dark">
+  <!-- Links -->
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item text-white">
+      <a class="nav-link" href="index.html">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="placeappointment.html">Appointment</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="viewappointment.html">View Appointment</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="contact.html">Contact us</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="sidebar">
+  <a class="active" href="index.html">Home</a>
+  <a href="placeappointment.html">Appointment</a>
+   <a href="viewappointment.html">View Appointment</a>
+  <a href="contact.html">Contact us</a>
+ 
+</div>  
+	<br/>
+  <div class="content">
+  <div class="container">
+  <div class ="box" >
+            
+  <p>Fitness trainers and instructors lead, instruct, and motivate individuals or groups in exercise activities,Including cardiovascular exercise </p>
+  <p>(exercises for the heart and blood system),strength training,and stretching. They work with people of all ages and skill levels.</p>
+  <h1>Duties</h1>
+  <p>Demonstrate how to carry out various exercises and routines</p>
+  <p>Monitor clients’ progress and adapt programs as needed</p>
+    </div>
+  </div>
+    <br/> 	
+     <div class="container">
+<button class="block"><a href="apply.html"><h1 class="display-1"><b>Apply <br/> For Trainer</b></h1></a></button>
+</div>
+</div>
+</body>
+</html>
