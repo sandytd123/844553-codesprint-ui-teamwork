@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Appointment Form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="../fitnesstrainer/assets/js/FormValidation.js"></script>
+  <script src="../fitnesstrainer/assets/js/storage.js"></script>
+  <script src="../fitnesstrainer/assets/js/enableText.js"></script>
+  <link rel="stylesheet" type="text/css" href="..\fitnesstrainer\assets\css\placeappointment.css">
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<nav class="container-fluid navbar navbar-expand-md navbar-light bg-light sticky-top  ">
+    			<img src="..\fitnesstrainer\assets\images\logo1.png" alt="logo" height="95" width="95" class="rounded-circle">
+    			<h1><b>Personal Fitness Trainer</b></h1>
+  			</nav>
+  		</div>
+	</div>
+	<div class="container-fluid">
+		<div class="row">
+			<nav class=" container-fluid navbar navbar-expand-md bg-secondary navbar-dark">
+    			<ul class="navbar-nav ml-auto">
+   					<li class="nav-item text-white">
+        				<a class="nav-link" href="index.html">Home</a>
+      				</li>
+      				<li class="nav-item">
+        				<a class="nav-link" href="placeappointment.html">Appointment</a>
+      				</li>
+   					<li class="nav-item">
+        				<a class="nav-link" href="viewappointment.html">View Appointment</a>
+      				</li>
+   					<li class="nav-item">
+        				<a class="nav-link" href="contact.html">Contact us</a>
+      				</li>
+   				</ul>
+  			</nav>
+  		</div>	
+	</div>
+<div class="row">
+	<div class="sidebar">
+    	<a href="index.html">Home</a>
+   		<a class="active" href="placeappointment.html">Appointment</a>
+    	<a href="viewappointment.html">View Appointment</a>
+   		<a href="contact.html">Contact us</a>
+	</div>
+	<div class="row">
+  		<form  class="appointmentform" onsubmit="fitnessTracker()">
+  			<div class="row">
+  				<div class="col">
+  					<h1>Appointment Form</h1>
+  				</div>
+  			</div>
+  			<div class="row">
+  				<div class="col">
+  					<label class="headings">
+ 						Name
+  					</label>
+  				</div>
+  			</div>
+  			<div class="row">
+  				<div class="col">
+  					<input type="text" name="fname" class="form-control" id="firstname" onblur="firstNameValidation()">
+  					<label>first name</label>
+  				</div>
+  				<div class="col">
+  					<input type="text" name="lname" class="form-control" id="lastname" onblur="lastNameValidation()">
+  					<label>last name</label>
+  				</div>
+  			</div>
+  			<div class="row">
+  				<div class="col">
+  					<label class="headings">Age</label>
+  					<input type="number" name="age" class="form-control" id="Age" min="18" max="60" step="1" value="agenumber">
+  				</div>
+  				<div class="col">
+  					<label class="headings">Email</label>
+  					<input type="Email" name="email" class="form-control" id="email" onblur="emailValidate()">
+  				</div>
+  				<div class="col">
+  					<label class="headings">Phone</label>
+  					<input type="text" name="phonenumber" class="form-control" id="phoneNo" onblur="validateNumber()">
+  				</div>
+  			</div>
+  			<div class="row">
+  				<div class="col">
+  				<fieldset>
+  					<legend>Address</legend>
+  					<div class="row">
+  						<div class="col">
+  							<input type="text" id="streetadd" name="streetAddress"><br>
+  							<label>Street Address</label>
+  						</div>
+  					</div>
+  					<div class="row">
+  						<div class="col">
+  							<input type="text" id="city" name="city"><br>
+  							<label>city</label>
+  						</div>
+  						<div class="col">
+  							<input type="text" id="state" name="state"><br>
+  							<label>State</label>
+  						</div>
+  						<div class="col">
+  							<select id="Country">
+                    			<option>Select</option>
+                    			<option>India</option>
+                    			<option>Malasia</option>
+                    			<option>Iran</option>
+                    			<option>Iraq</option>
+                    			<option>Singapoor</option>
+                  			</select><br>
+  							<label>Country</label>
+  						</div>
+  					</div>
+  					<div class="row">
+  						<div class="col">
+  						<input type="text" id="pincode" name="pincode" onblur="validatePincode()"><br>
+  						<label>Pincode</label>
+  						</div>
+  					</div>
+ 				</fieldset>
+ 				</div>
+ 			</div>
+ 			<div class="row">
+ 				<div class="col">
+ 					<div class="radio">
+ 						<label class="headings">Trainer Prefrence:</label><br>
+  						<label>
+    						<input type="radio" name="optionsRadios" id="trainerpreferences" value="maletrainer" checked="checked">
+    						Male Trainer<br>
+    						<input type="radio" name="optionsRadios" id="trainerpreferences" value="femaletrainer" checked="checked">
+    						Female Trainer<br>
+    						<input type="radio" name="optionsRadios" id="trainerpreferences" value="noprefrence" checked="checked">
+    						No Preference<br>
+    						<input type="radio" name="optionsRadios" id="trainerpreferences" onclick="enabletext('trainerName')" value="trainerName" checked="checked">
+    						Trainer Name
+    						<input type="text" name="trainerName" id="trainerName" disabled="true"><br>
+    						<input type="radio" name="optionsRadios" id="trainerpreferences" onclick="enabletext('other')" value="other" checked="checked">
+    						Other
+    						<input type="text" name="other" id="other" disabled="true">
+  						</label>
+					</div>
+ 				</div>
+ 			</div>
+ 			<div class="row">
+ 				<div class="col">
+ 					<div class ="radio">
+ 						<label class="headings">Do you need physiotherapist ?</label><br>
+ 						<label>
+ 							<input type="radio" name="need" id="need" value="yes">Yes
+ 							<input type="radio" name="need" id="need" value="no">No
+ 						</label>
+ 					</div>
+ 				</div>
+ 			</div>
+ 			<div class="row">
+ 				<div class="col">
+ 					<label class="headings">Appointment:(FREE)</label>
+ 					<table class="input-group-sm table table-striped table-hover" border="1px" id="table">
+					  
+					  <tr>
+						<td scope="col" style="text-align: center;">Day </td>
+						<th scope="col">7:00am to 9:00am</th>
+						<th scope="col">9:00 am to 11:00am</th>
+						<th scope="col">11:00am to 1:00pm</th>
+						<th scope="col">1:00pm to 3:00pm</th>
+						<th scope="col">3:00pm to5:00pm</th>
+					  </tr>
+					  <tr  style="text-align: center;">
+						<th scope="row"> Monday</th>
+						<td><input type="radio" id="1" name="1" value="Monday">1</td>
+						<td><input type="radio" id="2" name="1" value="Monday">2</td>
+						<td><input type="radio" id="3" name="1" value="Monday">3</td>
+						<td><input type="radio" id="4" name="1" value="Monday">4</td>
+						<td><input type="radio" id="5" name="1" value="Monday">5</td>
+					  </tr>
+					  <tr style="text-align: center;">
+						<th scope="row"> Tuseday</th>
+						<td><input type="radio" id="6" name="1" value="Tuesday">1</td>
+						<td><input type="radio" id="7" name="1" value="Tuesday">2</td>
+						<td><input type="radio" id="8" name="1" value="Tuesday">3</td>
+						<td><input type="radio" id="9" name="1" value="Tuesday">4</td>
+						<td><input type="radio" id="10" name="1" value="Tuesday">5</td>
+					  </tr>
+					  <tr style="text-align: center;">
+						<th scope="row"> Wedneseday</th>
+						<td><input type="radio" id="11" name="1" value="Wednesday">1</td>
+						<td><input type="radio" id="12" name="1" value="Wednesday">2</td>
+						<td><input type="radio" id="13" name="1" value="Wednesday">3</td>
+						<td><input type="radio" id="14" name="1" value="Wednesday">4</td>
+						<td><input type="radio" id="15" name="1" value="Wednesday">5</td>
+					  </tr>
+					  <tr style="text-align: center;">
+						<th scope="row">Thursday</th>
+						<td><input type="radio" id="16" name="1" value="Thursday">1</td>
+						<td><input type="radio" id="17" name="1" value="Thursday">2</td>
+						<td><input type="radio" id="18" name="1" value="Thursday">3</td>
+						<td><input type="radio" id="19" name="1" value="Thursday">4</td>
+						<td><input type="radio" id="20" name="1" value="Thursday">5</td>
+					  </tr>
+					  <tr style="text-align: center;">
+						<th scope="row"> Friday</th>
+						<td><input type="radio" id="21" name="1" value="Friday">1</td>
+						<td><input type="radio" id="22" name="1" value="Friday">2</td>
+						<td><input type="radio" id="23" name="1" value="Friday">3</td>
+						<td><input type="radio" id="24" name="1" value="Friday">4</td>
+						<td><input type="radio" id="25" name="1" value="Friday">5</td>
+					  </tr>
+					  <tr style="text-align: center;">
+						<th scope="row"> Saturday</th>
+						<td><input type="radio" id="26" name="1" value="Saturday">1</td>
+						<td><input type="radio" id="27" name="1" value="Saturday">2</td>
+						<td><input type="radio" id="28" name="1" value="Saturday">3</td>
+						<td><input type="radio" id="29" name="1" value="Saturday">4</td>
+						<td><input type="radio" id="30" name="1" value="Saturday">5</td>
+					  </tr>
+					  <tr style="text-align: center;">
+						<th scope="row">Sunday</th>
+						<td><input type="radio" id="31" name="1" value="Sunday">1</td>
+						<td><input type="radio" id="32" name="1" value="Sunday">2</td>
+						<td><input type="radio" id="33" name="1" value="Sunday">3</td>
+						<td><input type="radio" id="34" name="1" value="Sunday">4</td>
+						<td><input type="radio" id="35" name="1" value="Sunday">5</td>
+					  </tr>
+					</table>
+ 				</div>
+ 			</div>
+ 			<div class="row">
+ 				<div class="col">
+					<div class="radio">
+ 						<label class="headings">Select a package:</label><br>
+  						<label>
+    						<input type="radio" name="optionsRadios" id="package" value="500" checked="checked">
+    						One time assessment only(INR 500)<br>
+    						<input type="radio" name="optionsRadios" id="package" value="400" checked="checked">
+    						4 weekly sessions (INR 400/Session)<br>
+    						<input type="radio" name="optionsRadios" id="package" value="300" checked="checked">
+    						12 weekly sessions (INR 300/Session)<br>
+    						<input type="radio" name="optionsRadios" id="package" value="otherpackage" checked="checked">
+    						Other
+    						<input type="text" id="otherpackage" name="other"><br>
+    						<label>Quote will be shared on phone call</label>
+  						</label>
+					</div>
+ 				</div>
+ 			</div>
+ 			<div class="row">
+ 				<div class="col">
+ 					<label class="headings">Quote</label>
+ 				</div>
+ 			</div>
+ 			<div class="row">
+ 				<div class="col">
+ 					<input type="text" name="INR">
+ 					<input type="text" name="paise">
+ 				</div>
+ 			</div>
+ 			<div class="row">	
+ 				<div class="col">
+ 					<label>NRI</label>
+ 					<label>Paise</label>
+ 				</div>
+ 			</div>
+ 			<div class="row">
+ 				<div class="col text-center">
+ 					<button class="btn btn-primary" type="submit">Submit</button>
+ 				</div>
+ 			</div>	
+  		</form>	
+  	</div>
+</div>
+</body>
+</html>
